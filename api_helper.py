@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Apr 24 15:55:07 2022
-
-@author: Danish
-"""
 
 def print_request_pretty(request):
     print( '\n{}\n{}\n\n{}\n\n{}\n'.format(

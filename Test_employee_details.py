@@ -6,8 +6,8 @@ import time
 from api_helper import print_request_pretty, print_response_pretty, get_endpoint
 
 
-def test_total_emp_rec():
-    url = get_endpoint() + '/employees'
+def test_employee_details():
+    url = get_endpoint() + '/employee/15'
 
     # Additional headers.
     headers = {'Content-Type': 'application/json',
@@ -30,7 +30,8 @@ def test_total_emp_rec():
     assert resp.status_code == 200
     resp_body = resp.json()
     print("response body = "+str(resp_body))
-    assert len(resp_body['data']) == 24
+    print("name = "+resp_body['data']['employee_name'])
+    assert resp_body['data']['employee_name'] == "Tatyana Fitzpatrick"
 
     # print full request and response
     print_request_pretty(resp.request)
